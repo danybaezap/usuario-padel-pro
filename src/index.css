@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html,
+  body {
+    @apply bg-ink-950 text-slate-100;
+    font-feature-settings: 'tnum' 1, 'cv11' 1;
+  }
+  body {
+    background-image:
+      radial-gradient(1200px 600px at 10% -10%, rgba(198, 244, 50, 0.07), transparent 60%),
+      radial-gradient(900px 500px at 110% 0%, rgba(34, 211, 238, 0.06), transparent 60%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  ::selection {
+    background: rgba(198, 244, 50, 0.35);
+  }
+  input,
+  select,
+  textarea {
+    @apply outline-none;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-white/[0.07] bg-ink-900/80 shadow-[0_1px_0_rgba(255,255,255,0.04)_inset,0_20px_40px_-24px_rgba(0,0,0,0.8)] backdrop-blur;
+  }
+  .card-hover {
+    @apply transition hover:border-white/15 hover:bg-ink-850/90;
+  }
+  .label {
+    @apply mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400;
+  }
+  .input {
+    @apply w-full rounded-xl border border-white/10 bg-ink-950/70 px-3.5 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 transition focus:border-lime-court/60 focus:ring-2 focus:ring-lime-court/20;
+  }
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition active:scale-[0.98] disabled:pointer-events-none disabled:opacity-40;
+  }
+  .btn-primary {
+    @apply btn bg-lime-court text-ink-950 shadow-[0_8px_24px_-10px_rgba(198,244,50,0.7)] hover:brightness-110;
+  }
+  .btn-secondary {
+    @apply btn border border-white/10 bg-white/[0.04] text-slate-100 hover:bg-white/[0.08];
+  }
+  .btn-ghost {
+    @apply btn text-slate-300 hover:bg-white/[0.06] hover:text-white;
+  }
+  .btn-danger {
+    @apply btn border border-rose-500/30 bg-rose-500/10 text-rose-300 hover:bg-rose-500/20;
+  }
+  .btn-sm {
+    @apply rounded-lg px-3 py-1.5 text-xs;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-[11px] font-semibold;
+  }
+  .display {
+    @apply font-display font-bold uppercase tracking-wide;
+  }
+  .num {
+    @apply font-mono tabular-nums;
+  }
+  .court-lines {
+    background-image:
+      linear-gradient(90deg, transparent calc(50% - 1px), rgba(255, 255, 255, 0.06) calc(50% - 1px), rgba(255, 255, 255, 0.06) calc(50% + 1px), transparent calc(50% + 1px)),
+      linear-gradient(transparent calc(50% - 1px), rgba(255, 255, 255, 0.05) calc(50% - 1px), rgba(255, 255, 255, 0.05) calc(50% + 1px), transparent calc(50% + 1px));
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-white/10;
+  }
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
