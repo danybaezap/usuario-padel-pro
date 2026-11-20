@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { CourtCard, PairLabel } from '@/components/sport';
 import { Podium, StandingsTable } from '@/components/standings';
+import { BrandMark } from '@/components/Brand';
 import { CategoryBadge, LiveDot, cx } from '@/components/ui';
 import { publicBaseUrl } from '@/data';
 import { CATEGORY_THEME } from '@/domain/defaults';
@@ -106,8 +107,9 @@ export default function TvMode() {
     <div className="flex h-screen flex-col overflow-hidden bg-ink-950 text-white">
       {/* Cabecera */}
       <header className="flex items-center justify-between gap-6 border-b border-white/10 bg-gradient-to-r from-ink-850 to-ink-950 px-8 py-4">
-        <div className="flex items-center gap-4">
-          <span className="h-10 w-2 rounded-full bg-lime-court" />
+        <div className="flex items-center gap-5">
+          <BrandMark className="h-14" />
+          <span className="h-12 w-px bg-white/20" />
           <div>
             <h1 className="display text-4xl leading-none xl:text-5xl">{s.tournament.name}</h1>
             {s.tournament.venue && <p className="text-lg text-slate-400">{s.tournament.venue}</p>}

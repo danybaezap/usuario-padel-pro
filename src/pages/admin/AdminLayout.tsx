@@ -7,7 +7,7 @@ import { hashPin, isLocallyUnlocked, setLocallyUnlocked } from '@/data/localRepo
 import { useAuth } from '@/hooks/useAuth';
 import { useToast } from '@/hooks/useToast';
 import { useTournament } from '@/hooks/useTournament';
-import { BrandMark } from '../Home';
+import { BrandMark } from '@/components/Brand';
 import { ConnectionPill } from '../public/PublicLayout';
 import { DemoControls } from './DemoControls';
 
@@ -85,18 +85,19 @@ export default function AdminLayout() {
     <AdminGate>
       <div className="min-h-screen pb-20">
         <header className="sticky top-0 z-30 border-b border-white/[0.06] bg-ink-950/90 backdrop-blur">
-          <div className="mx-auto flex max-w-7xl items-center gap-3 px-4 py-3 sm:px-6">
-            <Link to="/" aria-label="Inicio">
-              <BrandMark className="origin-left scale-90" />
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-3 gap-y-2 px-4 py-3 sm:flex-nowrap sm:px-6">
+            <Link to="/" aria-label="Inicio" className="shrink-0">
+              <BrandMark className="h-7 sm:h-8" />
             </Link>
             <span className="hidden h-6 w-px bg-white/10 sm:block" />
-            <div className="min-w-0 flex-1">
+            <div className="order-last min-w-0 basis-full sm:order-none sm:basis-auto sm:flex-1">
               <div className="truncate font-semibold text-white">{s.tournament.name}</div>
-              <div className="text-[11px] uppercase tracking-wider text-slate-500">
+              <div className="truncate text-[11px] uppercase tracking-wider text-slate-500">
                 Panel de administración{s.tournament.isDemo ? ' · demostración' : ''}
               </div>
             </div>
-            {busy && <span className="text-xs text-slate-400">Guardando…</span>}
+            <span className="flex-1 sm:hidden" />
+            {busy && <span className="hidden text-xs text-slate-400 sm:inline">Guardando…</span>}
             <ConnectionPill />
             <Link to={`/t/${s.tournament.slug}`} target="_blank" className="btn-secondary btn-sm">
               <ExternalLink className="h-3.5 w-3.5" /> <span className="hidden sm:inline">Público</span>

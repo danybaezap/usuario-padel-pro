@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Database, FlaskConical, HardDrive, LogOut, Plus, Trash2, Trophy } from 'lucide-react';
+import { ArrowRight, Database, FlaskConical, HardDrive, LogOut, Plus, Trash2 } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { repo, type TournamentSummary } from '@/data';
@@ -10,20 +10,8 @@ import { DomainError } from '@/domain/types';
 import { useAuth } from '@/hooks/useAuth';
 import { useToast } from '@/hooks/useToast';
 import { longDate } from '@/lib/format';
+import { BrandMark } from '@/components/Brand';
 import { CategoryBadge, Spinner, useConfirm } from '@/components/ui';
-
-export function BrandMark({ className = '' }: { className?: string }) {
-  return (
-    <span className={`inline-flex items-center gap-2 ${className}`}>
-      <span className="relative inline-flex h-8 w-8 items-center justify-center rounded-lg bg-lime-court text-ink-950 shadow-[0_0_24px_rgba(198,244,50,0.45)]">
-        <Trophy className="h-4 w-4" />
-      </span>
-      <span className="display text-xl tracking-wider text-white">
-        Pádel<span className="text-lime-court">Pro</span>
-      </span>
-    </span>
-  );
-}
 
 const STATUS_LABEL = { registration: 'Inscripciones', in_progress: 'En juego', finished: 'Finalizado' } as const;
 
@@ -90,8 +78,7 @@ export default function Home() {
   return (
     <div className="mx-auto max-w-6xl px-4 pb-24 pt-6 sm:px-6">
       {dialog}
-      <header className="flex items-center justify-between">
-        <BrandMark />
+      <header className="flex items-center justify-end">
         <div className="flex items-center gap-2 text-xs text-slate-400">
           <span className="chip border border-white/10 bg-white/[0.03] text-slate-300" title={repo.mode === 'supabase' ? 'Datos en Supabase con sincronización en tiempo real' : 'Datos guardados en este navegador'}>
             {repo.mode === 'supabase' ? <Database className="h-3 w-3" /> : <HardDrive className="h-3 w-3" />}
@@ -115,6 +102,7 @@ export default function Home() {
         <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-lime-court/20 blur-3xl" />
         <div className="relative grid gap-10 lg:grid-cols-[1.1fr_1fr]">
           <div>
+            <BrandMark variant="full" className="mb-8 h-14 sm:h-16" />
             <div className="mb-3 flex gap-1.5">
               <CategoryBadge code="A" size="md" />
               <CategoryBadge code="B" size="md" />

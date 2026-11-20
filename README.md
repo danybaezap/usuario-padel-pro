@@ -1,4 +1,6 @@
-# Pádel Pro · Torneos Round Robin en vivo
+# Padel House · Torneos Round Robin en vivo
+
+![Padel House · Powered by Finbra](public/brand/padel-house-full.png)
 
 Plataforma web para organizar y seguir **en tiempo real** un torneo de pádel con
 **tres categorías independientes (A, B y C)**, **parejas fijas**, **canchas

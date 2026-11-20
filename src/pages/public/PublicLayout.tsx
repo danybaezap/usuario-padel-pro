@@ -3,7 +3,7 @@ import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { cx } from '@/components/ui';
 import { useTournament } from '@/hooks/useTournament';
 import { longDate } from '@/lib/format';
-import { BrandMark } from '../Home';
+import { BrandMark } from '@/components/Brand';
 import { Link } from 'react-router-dom';
 
 export function ConnectionPill() {
@@ -40,7 +40,7 @@ export default function PublicLayout() {
         <div className="relative mx-auto max-w-7xl px-4 pb-4 pt-4 sm:px-6">
           <div className="flex items-center justify-between gap-3">
             <Link to="/" aria-label="Inicio">
-              <BrandMark className="scale-90 origin-left" />
+              <BrandMark className="h-9 sm:h-10" />
             </Link>
             <div className="flex items-center gap-2">
               <ConnectionPill />

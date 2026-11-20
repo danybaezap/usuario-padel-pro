@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Crown, FileDown, Sparkles } from 'lucide-react';
+import { BrandMark } from '@/components/Brand';
 import { PairLabel } from '@/components/sport';
 import { Podium } from '@/components/standings';
 import { CategoryBadge, Empty, Stat } from '@/components/ui';
@@ -22,6 +23,7 @@ export default function AwardsView() {
     <div className="space-y-10">
       <div className="relative overflow-hidden rounded-3xl border border-amber-300/20 bg-gradient-to-br from-amber-400/15 via-ink-900 to-ink-950 p-8 text-center">
         <div className="pointer-events-none absolute -top-24 left-1/2 h-64 w-[38rem] -translate-x-1/2 rounded-full bg-amber-300/20 blur-3xl" />
+        <BrandMark variant="full" className="relative mx-auto mb-6 h-12 sm:h-16" />
         <Sparkles className="relative mx-auto h-8 w-8 text-amber-300" />
         <h2 className="display relative mt-2 text-4xl text-white sm:text-6xl">{s.tournament.status === 'finished' ? 'Premiación' : 'Campeones'}</h2>
         <p className="relative mt-2 text-slate-300">{s.tournament.name}</p>

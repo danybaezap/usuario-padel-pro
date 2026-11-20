@@ -3,7 +3,7 @@ import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { repo } from '@/data';
 import { useAuth } from '@/hooks/useAuth';
 import { useToast } from '@/hooks/useToast';
-import { BrandMark } from './Home';
+import { BrandMark } from '@/components/Brand';
 
 export default function Login() {
   const [email, setEmail] = useState('');
