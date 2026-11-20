@@ -112,7 +112,7 @@ export default function PairDetail() {
             <div className="space-y-2">
               {[...history].reverse().map((h) => (
                 <div key={h.match.id} className="flex items-center gap-3 rounded-xl border border-white/[0.05] bg-white/[0.02] px-3 py-2.5">
-                  <span className={cx('display flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-lg', h.won ? 'bg-lime-court/15 text-lime-court' : 'bg-rose-500/15 text-rose-300')}>{h.won ? 'V' : 'D'}</span>
+                  <span className={cx('display flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-lg', h.won ? 'bg-accent/15 text-accent' : 'bg-rose-500/15 text-rose-300')}>{h.won ? 'V' : 'D'}</span>
                   <div className="min-w-0 flex-1">
                     <div className="text-[11px] text-slate-500">vs {h.match.phase !== 'round_robin' ? `· ${PHASE_LABEL[h.match.phase]}` : ''}</div>
                     <PairLabel index={index} pairId={h.opponentId} slug={slug} size="sm" />
@@ -147,7 +147,7 @@ export default function PairDetail() {
                       <PairLabel index={index} pairId={r.id} slug={slug} size="sm" />
                     </div>
                     {rec ? (
-                      <span className={cx('chip', rec.won > rec.lost ? 'bg-lime-court/15 text-lime-court' : rec.won < rec.lost ? 'bg-rose-500/15 text-rose-300' : 'bg-white/5 text-slate-300')}>
+                      <span className={cx('chip', rec.won > rec.lost ? 'bg-accent/15 text-accent' : rec.won < rec.lost ? 'bg-rose-500/15 text-rose-300' : 'bg-white/5 text-slate-300')}>
                         {rec.won}-{rec.lost} · {rec.matches.map((m) => m.score).join(' / ')}
                       </span>
                     ) : (

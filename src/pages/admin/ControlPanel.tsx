@@ -205,7 +205,7 @@ function AdminCourt({
           {match && match.phase !== 'round_robin' && <span className="chip bg-amber-400/15 text-amber-300">{PHASE_LABEL[match.phase]}</span>}
         </div>
         {match?.status === 'in_progress' ? (
-          <span className="flex items-center gap-1.5 text-xs font-semibold text-lime-court">
+          <span className="flex items-center gap-1.5 text-xs font-semibold text-accent">
             <LiveDot /> {elapsed(match.startedAt, now)}
           </span>
         ) : match?.status === 'scheduled' ? (
@@ -270,10 +270,10 @@ function AdminCourt({
         </>
       ) : proposal ? (
         <div className="flex flex-1 flex-col">
-          <div className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider text-lime-court/80">
+          <div className="mb-2 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wider text-accent/80">
             <Sparkles className="h-3.5 w-3.5" /> Propuesta {cat && <CategoryBadge code={cat.code} />}
           </div>
-          <div className="space-y-1.5 rounded-xl border border-dashed border-lime-court/25 bg-lime-court/[0.04] p-3">
+          <div className="space-y-1.5 rounded-xl border border-dashed border-accent/25 bg-accent/[0.04] p-3">
             <PairLabel index={index} pairId={proposal.match.pair1Id} size="sm" />
             <PairLabel index={index} pairId={proposal.match.pair2Id} size="sm" />
           </div>
@@ -322,7 +322,7 @@ function CandidatePicker({ court, onPick }: { court: Court; onPick: (m: Match) =
         {cands.map((c, i) => {
           const cat = s.categories.find((x) => x.id === c.match.categoryId)!;
           return (
-            <button key={c.match.id} className="flex w-full items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.02] px-3 py-2 text-left transition hover:border-lime-court/40 hover:bg-white/[0.05]" onClick={() => onPick(c.match)}>
+            <button key={c.match.id} className="flex w-full items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.02] px-3 py-2 text-left transition hover:border-accent/40 hover:bg-white/[0.05]" onClick={() => onPick(c.match)}>
               <span className="num w-5 text-xs text-slate-500">{i + 1}</span>
               <CategoryBadge code={cat.code} />
               <div className="min-w-0 flex-1 text-sm">

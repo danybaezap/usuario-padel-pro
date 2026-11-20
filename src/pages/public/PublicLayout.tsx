@@ -13,8 +13,8 @@ export function ConnectionPill() {
       <WifiOff className="h-3 w-3" /> Sin conexión
     </span>
   ) : (
-    <span className="chip bg-lime-court/10 text-lime-court" title="Actualización automática en tiempo real">
-      <span className="h-1.5 w-1.5 animate-live rounded-full bg-lime-court" /> EN VIVO
+    <span className="chip bg-accent/10 text-accent" title="Actualización automática en tiempo real">
+      <span className="h-1.5 w-1.5 animate-live rounded-full bg-accent" /> EN VIVO
     </span>
   );
 }
@@ -36,7 +36,7 @@ export default function PublicLayout() {
     <div className="pb-24 sm:pb-10">
       <header className="relative overflow-hidden border-b border-white/[0.06] bg-gradient-to-b from-ink-850 to-ink-950">
         <div className="court-lines pointer-events-none absolute inset-0 opacity-40" />
-        <div className="pointer-events-none absolute -left-20 top-0 h-48 w-96 rounded-full bg-lime-court/10 blur-3xl" />
+        <div className="pointer-events-none absolute -left-20 top-0 h-48 w-96 rounded-full bg-accent/10 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-4 pb-4 pt-4 sm:px-6">
           <div className="flex items-center justify-between gap-3">
             <Link to="/" aria-label="Inicio">
@@ -95,7 +95,7 @@ export default function PublicLayout() {
             key={l.to}
             to={l.to}
             end={l.end}
-            className={({ isActive }) => cx('flex flex-col items-center gap-1 py-2.5 text-[10px] font-semibold', isActive ? 'text-lime-court' : 'text-slate-500')}
+            className={({ isActive }) => cx('flex flex-col items-center gap-1 py-2.5 text-[10px] font-semibold', isActive ? 'text-accent' : 'text-slate-500')}
           >
             <l.icon className="h-5 w-5" />
             {l.label}

@@ -99,7 +99,7 @@ export default function Home() {
 
       <section className="relative mt-10 overflow-hidden rounded-3xl border border-white/[0.07] bg-gradient-to-br from-ink-850 via-ink-900 to-ink-950 p-6 sm:p-10">
         <div className="court-lines pointer-events-none absolute inset-0 opacity-50" />
-        <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-lime-court/20 blur-3xl" />
+        <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-accent/20 blur-3xl" />
         <div className="relative grid gap-10 lg:grid-cols-[1.1fr_1fr]">
           <div>
             <BrandMark variant="full" className="mb-8 h-14 sm:h-16" />
@@ -111,7 +111,7 @@ export default function Home() {
             <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="display text-5xl leading-[0.95] text-white sm:text-6xl">
               Tu torneo de pádel,
               <br />
-              <span className="text-lime-court">en vivo.</span>
+              <span className="text-accent">en vivo.</span>
             </motion.h1>
             <p className="mt-4 max-w-lg text-slate-300">
               Round Robin con parejas fijas en tres categorías, tres canchas compartidas, asignación inteligente de partidos, marcadores en tiempo real y pantallas para TV y móvil.
@@ -208,7 +208,7 @@ function TournamentList({ title, items, loading, onRemove, demo }: { title: stri
                   <div className="truncate font-semibold text-white">{t.name}</div>
                   <div className="text-xs capitalize text-slate-400">{longDate(t.date)}{t.venue ? ` · ${t.venue}` : ''}</div>
                 </div>
-                <span className={`chip ${t.status === 'in_progress' ? 'bg-lime-court/15 text-lime-court' : t.status === 'finished' ? 'bg-amber-400/15 text-amber-300' : 'bg-white/5 text-slate-300'}`}>
+                <span className={`chip ${t.status === 'in_progress' ? 'bg-accent/15 text-accent' : t.status === 'finished' ? 'bg-amber-400/15 text-amber-300' : 'bg-white/5 text-slate-300'}`}>
                   {demo ? 'Demo · ' : ''}
                   {STATUS_LABEL[t.status]}
                 </span>

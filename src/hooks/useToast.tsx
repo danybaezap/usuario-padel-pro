@@ -45,16 +45,16 @@ export function ToastProvider({ children }: { children: ReactNode }) {
                 t.kind === 'error'
                   ? 'border-rose-500/40 bg-rose-950/90 text-rose-100'
                   : t.kind === 'success'
-                    ? 'border-lime-court/30 bg-ink-850/95 text-slate-100'
+                    ? 'border-accent/30 bg-ink-850/95 text-slate-100'
                     : 'border-white/10 bg-ink-850/95 text-slate-100'
               }`}
             >
               {t.kind === 'error' ? (
                 <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-rose-300" />
               ) : t.kind === 'success' ? (
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-lime-court" />
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
               ) : (
-                <Info className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" />
+                <Info className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
               )}
               <span className="flex-1">{t.message}</span>
               <button aria-label="Cerrar" onClick={() => setToasts((x) => x.filter((y) => y.id !== t.id))}>

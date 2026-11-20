@@ -247,10 +247,10 @@ export function ScoreEntryModal({
         </div>
       )}
 
-      <div className={cx('mt-5 rounded-xl border px-4 py-3 text-sm', preview?.ok ? 'border-lime-court/30 bg-lime-court/5' : 'border-white/10 bg-white/[0.02]')}>
+      <div className={cx('mt-5 rounded-xl border px-4 py-3 text-sm', preview?.ok ? 'border-accent/30 bg-accent/5' : 'border-white/10 bg-white/[0.02]')}>
         {preview?.ok ? (
           <div className="flex items-center gap-3">
-            <Trophy className="h-5 w-5 text-lime-court" />
+            <Trophy className="h-5 w-5 text-accent" />
             <div>
               <div className="font-semibold text-white">Gana {index.pairName(preview.winner)}</div>
               <div className="num text-slate-300">{preview.text}</div>

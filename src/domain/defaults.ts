@@ -28,7 +28,7 @@ export const CATEGORY_THEME: Record<
 > = {
   A: {
     label: 'Categoría A',
-    hex: '#f5b021',
+    hex: '#e8a317',
     text: 'text-catA',
     bg: 'bg-catA',
     soft: 'bg-catA-soft',
@@ -38,7 +38,7 @@ export const CATEGORY_THEME: Record<
   },
   B: {
     label: 'Categoría B',
-    hex: '#22d3ee',
+    hex: '#1fbf86',
     text: 'text-catB',
     bg: 'bg-catB',
     soft: 'bg-catB-soft',
@@ -48,7 +48,7 @@ export const CATEGORY_THEME: Record<
   },
   C: {
     label: 'Categoría C',
-    hex: '#e879f9',
+    hex: '#d65ee8',
     text: 'text-catC',
     bg: 'bg-catC',
     soft: 'bg-catC-soft',

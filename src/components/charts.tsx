@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
  * Una sola serie (sin leyenda: el título la nombra), eje Y invertido (1º arriba),
  * línea de 2px, marcadores de 8px, rejilla recesiva y tooltip por punto.
  */
-export function RankLine({ points, total, color = '#c6f432' }: { points: Array<{ step: number; position: number; label: string }>; total: number; color?: string }) {
+export function RankLine({ points, total, color = '#5cb8ff' }: { points: Array<{ step: number; position: number; label: string }>; total: number; color?: string }) {
   const [hover, setHover] = useState<number | null>(null);
   const box = useRef<HTMLDivElement>(null);
   const [W, setW] = useState(640);
@@ -42,7 +42,7 @@ export function RankLine({ points, total, color = '#c6f432' }: { points: Array<{
         {points.map((p, i) => (
           <g key={i} onMouseEnter={() => setHover(i)} onMouseLeave={() => setHover(null)} onTouchStart={() => setHover(i)}>
             <circle cx={x(p.step)} cy={y(p.position)} r={14} fill="transparent" />
-            <circle cx={x(p.step)} cy={y(p.position)} r={hover === i ? 6 : 4} fill={color} stroke="#0a0f1c" strokeWidth={2} />
+            <circle cx={x(p.step)} cy={y(p.position)} r={hover === i ? 6 : 4} fill={color} stroke="#00173f" strokeWidth={2} />
           </g>
         ))}
       </svg>
@@ -75,7 +75,7 @@ export function MatchDiffBars({ items }: { items: Array<{ label: string; diff: n
               style={{
                 left: it.diff >= 0 ? '50%' : `${50 - (Math.abs(it.diff) / max) * 50}%`,
                 width: `${(Math.abs(it.diff) / max) * 50}%`,
-                background: it.diff >= 0 ? '#c6f432' : '#fb7185',
+                background: it.diff >= 0 ? '#5cb8ff' : '#fb7185',
                 minWidth: 2,
               }}
             />

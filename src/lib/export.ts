@@ -89,7 +89,7 @@ export async function exportPdf(s: TournamentSnapshot) {
   const doc = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'a4' });
   const idx = indexSnapshot(s);
   const t = s.tournament;
-  const colors: Record<string, [number, number, number]> = { A: [245, 176, 33], B: [34, 211, 238], C: [232, 121, 249] };
+  const colors: Record<string, [number, number, number]> = { A: [232, 163, 23], B: [31, 191, 134], C: [214, 94, 232] };
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(22);
   doc.text(t.name, 40, 50);
@@ -145,7 +145,7 @@ export async function exportPdf(s: TournamentSnapshot) {
     head: [['Cat', 'Fase', 'Pareja 1', 'Pareja 2', 'Estado', 'Resultado', 'Cancha']],
     body: res.slice(1).map((r) => [r[0], r[1] === 'Round Robin' ? `V${r[2]} J${r[3]}` : r[1], r[4], r[5], r[6], r[7], r[10]] as string[]),
     styles: { fontSize: 8 },
-    headStyles: { fillColor: [10, 15, 28] },
+    headStyles: { fillColor: [0, 23, 63] },
     margin: { left: 40, right: 40 },
   });
   doc.save(`${t.slug}-resumen.pdf`);

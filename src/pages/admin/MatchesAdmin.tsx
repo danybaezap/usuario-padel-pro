@@ -46,7 +46,7 @@ function MatchActionsModal({ matchId, onClose, actions }: { matchId: string | nu
             <PairLabel index={index} pairId={m.pair1Id} />
             <div className="h-px bg-white/10" />
             <PairLabel index={index} pairId={m.pair2Id} />
-            {m.status === 'finished' && <div className="num pt-1 text-lg font-bold text-lime-court">{matchScoreLabel(s, m)}</div>}
+            {m.status === 'finished' && <div className="num pt-1 text-lg font-bold text-accent">{matchScoreLabel(s, m)}</div>}
             {m.notes && <div className="text-xs text-slate-400">Nota: {m.notes}</div>}
           </div>
 

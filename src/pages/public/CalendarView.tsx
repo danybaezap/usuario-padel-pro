@@ -58,7 +58,7 @@ export function CalendarBoard({ admin, onMatchClick }: { admin?: boolean; onMatc
     return [...g.entries()];
   }, [rows, view, cats]);
 
-  const chip = (active: boolean) => cx('chip cursor-pointer border px-3 py-1 text-xs', active ? 'border-lime-court/50 bg-lime-court/15 text-lime-court' : 'border-white/10 bg-white/[0.03] text-slate-300 hover:bg-white/10');
+  const chip = (active: boolean) => cx('chip cursor-pointer border px-3 py-1 text-xs', active ? 'border-accent/50 bg-accent/15 text-accent' : 'border-white/10 bg-white/[0.03] text-slate-300 hover:bg-white/10');
 
   return (
     <div>

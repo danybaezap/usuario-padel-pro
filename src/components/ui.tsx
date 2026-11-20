@@ -10,7 +10,7 @@ export function cx(...parts: Array<string | false | null | undefined>) {
 }
 
 export function Spinner({ className = 'h-5 w-5' }: { className?: string }) {
-  return <Loader2 className={cx('animate-spin text-lime-court', className)} />;
+  return <Loader2 className={cx('animate-spin text-accent', className)} />;
 }
 
 export function FullScreenMessage({ title, children }: { title: string; children?: ReactNode }) {
@@ -39,7 +39,7 @@ export function CategoryBadge({ code, size = 'sm', className }: { code: Category
 const STATUS_STYLE: Record<MatchStatus, string> = {
   pending: 'bg-white/[0.06] text-slate-300',
   scheduled: 'bg-sky-500/15 text-sky-300',
-  in_progress: 'bg-lime-court/15 text-lime-court',
+  in_progress: 'bg-accent/15 text-accent',
   finished: 'bg-emerald-500/10 text-emerald-300',
   suspended: 'bg-amber-500/15 text-amber-300',
   cancelled: 'bg-rose-500/10 text-rose-300 line-through',
@@ -48,7 +48,7 @@ const STATUS_STYLE: Record<MatchStatus, string> = {
 export function StatusBadge({ status, postponed }: { status: MatchStatus; postponed?: number }) {
   return (
     <span className={cx('chip', STATUS_STYLE[status])}>
-      {status === 'in_progress' && <span className="h-1.5 w-1.5 animate-live rounded-full bg-lime-court" />}
+      {status === 'in_progress' && <span className="h-1.5 w-1.5 animate-live rounded-full bg-accent" />}
       {STATUS_LABEL[status]}
       {status === 'pending' && postponed ? ` · pospuesto` : ''}
     </span>
@@ -58,8 +58,8 @@ export function StatusBadge({ status, postponed }: { status: MatchStatus; postpo
 export function LiveDot({ className }: { className?: string }) {
   return (
     <span className={cx('relative inline-flex h-2.5 w-2.5', className)}>
-      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime-court opacity-60" />
-      <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-lime-court" />
+      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+      <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent" />
     </span>
   );
 }
@@ -148,7 +148,7 @@ export function SectionTitle({ children, action, eyebrow }: { children: ReactNod
   return (
     <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
       <div>
-        {eyebrow && <div className="mb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-lime-court/80">{eyebrow}</div>}
+        {eyebrow && <div className="mb-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent/80">{eyebrow}</div>}
         <h2 className="display text-2xl text-white sm:text-3xl">{children}</h2>
       </div>
       {action}
@@ -191,7 +191,7 @@ export function Tabs<T extends string>({
           )}
         >
           {value === it.value && (
-            <motion.span layoutId={`tab-${items.map((i) => i.value).join()}`} className="absolute inset-0 rounded-lg bg-lime-court" transition={{ type: 'spring', damping: 30, stiffness: 400 }} />
+            <motion.span layoutId={`tab-${items.map((i) => i.value).join()}`} className="absolute inset-0 rounded-lg bg-accent" transition={{ type: 'spring', damping: 30, stiffness: 400 }} />
           )}
           <span className="relative z-10 flex items-center gap-1.5">{it.label}</span>
         </button>
@@ -200,7 +200,7 @@ export function Tabs<T extends string>({
   );
 }
 
-export function ProgressBar({ value, color = '#c6f432', className }: { value: number; color?: string; className?: string }) {
+export function ProgressBar({ value, color = '#5cb8ff', className }: { value: number; color?: string; className?: string }) {
   return (
     <div className={cx('h-1.5 w-full overflow-hidden rounded-full bg-white/[0.06]', className)}>
       <motion.div className="h-full rounded-full" style={{ backgroundColor: color }} initial={false} animate={{ width: `${Math.max(0, Math.min(100, value))}%` }} transition={{ duration: 0.6 }} />

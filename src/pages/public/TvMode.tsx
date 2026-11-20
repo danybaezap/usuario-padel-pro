@@ -116,7 +116,7 @@ export default function TvMode() {
           </div>
         </div>
         <div className="flex items-center gap-6">
-          <span className={cx('flex items-center gap-2 text-xl font-semibold', connection === 'offline' ? 'text-rose-300' : 'text-lime-court')}>
+          <span className={cx('flex items-center gap-2 text-xl font-semibold', connection === 'offline' ? 'text-rose-300' : 'text-accent')}>
             {connection === 'offline' ? 'Reconectando…' : (<><LiveDot /> EN VIVO</>)}
           </span>
           <span className="num text-5xl font-bold">{hhmm(now)}</span>
@@ -226,7 +226,7 @@ export default function TvMode() {
 
       {/* Pie: últimos resultados + QR */}
       <footer className="flex items-stretch border-t border-white/10 bg-ink-900">
-        <div className="flex shrink-0 items-center bg-lime-court px-5 text-xl font-bold uppercase text-ink-950 display">Resultados</div>
+        <div className="flex shrink-0 items-center bg-accent px-5 text-xl font-bold uppercase text-ink-950 display">Resultados</div>
         <div className="relative flex-1 overflow-hidden">
           <div className="flex h-full animate-[ticker_60s_linear_infinite] items-center gap-10 whitespace-nowrap px-6 text-xl">
             {[...recent, ...recent].map((m, k) => {
@@ -235,7 +235,7 @@ export default function TvMode() {
                 <span key={`${m.id}-${k}`} className="flex items-center gap-3">
                   <CategoryBadge code={cat.code} size="md" />
                   <span className={m.winnerPairId === m.pair1Id ? 'font-bold' : 'text-slate-400'}>{index.pairName(m.pair1Id)}</span>
-                  <span className="num text-lime-court">{matchScoreLabel(s, m)}</span>
+                  <span className="num text-accent">{matchScoreLabel(s, m)}</span>
                   <span className={m.winnerPairId === m.pair2Id ? 'font-bold' : 'text-slate-400'}>{index.pairName(m.pair2Id)}</span>
                 </span>
               );
@@ -255,7 +255,7 @@ export default function TvMode() {
         </div>
       </footer>
       <div className="h-1 bg-white/5">
-        <div className="h-full bg-lime-court transition-[width] duration-200 ease-linear" style={{ width: `${paused ? 0 : (elapsed / interval) * 100}%` }} />
+        <div className="h-full bg-accent transition-[width] duration-200 ease-linear" style={{ width: `${paused ? 0 : (elapsed / interval) * 100}%` }} />
       </div>
 
       {/* Controles discretos */}

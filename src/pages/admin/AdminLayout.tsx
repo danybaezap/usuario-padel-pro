@@ -109,7 +109,7 @@ export default function AdminLayout() {
                 key={l.to}
                 to={l.to}
                 end={l.end}
-                className={({ isActive }) => cx('flex shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold transition', isActive ? 'bg-lime-court text-ink-950' : 'text-slate-400 hover:bg-white/5 hover:text-white')}
+                className={({ isActive }) => cx('flex shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold transition', isActive ? 'bg-accent text-ink-950' : 'text-slate-400 hover:bg-white/5 hover:text-white')}
               >
                 <l.icon className="h-4 w-4" /> {l.label}
               </NavLink>

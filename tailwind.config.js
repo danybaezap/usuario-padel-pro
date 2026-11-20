@@ -9,15 +9,17 @@ export default {
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       colors: {
-        ink: { 950: '#05080f', 900: '#0a0f1c', 850: '#0e1526', 800: '#131c31', 700: '#1c2742', 600: '#2a3758', 500: '#3f4e74' },
-        catA: { DEFAULT: '#f5b021', soft: '#f5b02126', ring: '#f5b02166' },
-        catB: { DEFAULT: '#22d3ee', soft: '#22d3ee26', ring: '#22d3ee66' },
-        catC: { DEFAULT: '#e879f9', soft: '#e879f926', ring: '#e879f966' },
-        lime: { court: '#c6f432' },
+        // Azul marino de Padel House (#00173f = fondo del logo)
+        ink: { 950: '#000d26', 900: '#00173f', 850: '#04204d', 800: '#0a2a5c', 700: '#153a73', 600: '#244b88', 500: '#3a62a3' },
+        catA: { DEFAULT: '#e8a317', soft: '#e8a31726', ring: '#e8a31766' },
+        catB: { DEFAULT: '#1fbf86', soft: '#1fbf8626', ring: '#1fbf8666' },
+        catC: { DEFAULT: '#d65ee8', soft: '#d65ee826', ring: '#d65ee866' },
+        // Acento: azul claro derivado del azul marino de la marca
+        accent: '#5cb8ff',
       },
       keyframes: {
         pulseLive: { '0%,100%': { opacity: '1' }, '50%': { opacity: '.35' } },
-        flash: { '0%': { backgroundColor: 'rgba(198,244,50,.25)' }, '100%': { backgroundColor: 'transparent' } },
+        flash: { '0%': { backgroundColor: 'rgba(92,184,255,.25)' }, '100%': { backgroundColor: 'transparent' } },
       },
       animation: { live: 'pulseLive 1.4s ease-in-out infinite', flash: 'flash 1.6s ease-out' },
     },

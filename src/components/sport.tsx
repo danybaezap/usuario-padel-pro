@@ -115,7 +115,7 @@ export function CourtCard({
             {match && match.phase !== 'round_robin' && <span className="chip bg-amber-400/15 text-amber-300">{PHASE_LABEL[match.phase]}</span>}
           </div>
           {match?.status === 'in_progress' ? (
-            <span className={cx('flex items-center gap-2 font-semibold text-lime-court', big ? 'text-lg' : 'text-xs')}>
+            <span className={cx('flex items-center gap-2 font-semibold text-accent', big ? 'text-lg' : 'text-xs')}>
               <LiveDot /> EN JUEGO · {elapsed(match.startedAt, now)}
             </span>
           ) : match?.status === 'scheduled' ? (

@@ -124,7 +124,7 @@ export function StandingsTable({
                     className={cx(
                       'group',
                       move !== undefined && 'animate-flash',
-                      highlightPairId === r.pairId && 'outline outline-1 outline-lime-court/60',
+                      highlightPairId === r.pairId && 'outline outline-1 outline-accent/60',
                     )}
                     style={{ background: top ? `linear-gradient(90deg, ${theme.hex}${r.position === 1 ? '26' : '14'}, transparent 70%)` : 'rgba(255,255,255,0.02)' }}
                   >
@@ -138,7 +138,7 @@ export function StandingsTable({
                         <PairLabel index={index} pairId={r.pairId} slug={slug} size={tv ? 'lg' : 'sm'} />
                         {podiumPos === 0 && <Crown className="h-4 w-4 shrink-0 text-amber-300" aria-label="Campeona" />}
                         {move !== undefined && (
-                          <motion.span initial={{ opacity: 0, y: move > 0 ? 6 : -6 }} animate={{ opacity: 1, y: 0 }} className={cx('chip', move > 0 ? 'bg-lime-court/15 text-lime-court' : 'bg-rose-500/15 text-rose-300')}>
+                          <motion.span initial={{ opacity: 0, y: move > 0 ? 6 : -6 }} animate={{ opacity: 1, y: 0 }} className={cx('chip', move > 0 ? 'bg-accent/15 text-accent' : 'bg-rose-500/15 text-rose-300')}>
                             {move > 0 ? '▲' : '▼'} {Math.abs(move)}
                           </motion.span>
                         )}
@@ -164,14 +164,14 @@ export function StandingsTable({
                     )}
                     {!compact && <td className={cx(td, 'hidden text-slate-300 lg:table-cell')}>{r.gamesWon}</td>}
                     {!compact && <td className={cx(td, 'hidden text-slate-300 lg:table-cell')}>{r.gamesLost}</td>}
-                    <td className={cx(td, 'font-semibold', r.gameDiff > 0 ? 'text-lime-court' : r.gameDiff < 0 ? 'text-rose-300' : 'text-slate-400', (compact || tv) && 'rounded-r-xl')}>
+                    <td className={cx(td, 'font-semibold', r.gameDiff > 0 ? 'text-accent' : r.gameDiff < 0 ? 'text-rose-300' : 'text-slate-400', (compact || tv) && 'rounded-r-xl')}>
                       {signed(r.gameDiff)}
                     </td>
                     {!compact && !tv && (
                       <td className="hidden rounded-r-xl px-2 xl:table-cell">
                         <div className="flex justify-center gap-1">
                           {r.form.map((f, i) => (
-                            <span key={i} className={cx('h-2 w-2 rounded-full', f === 'W' ? 'bg-lime-court' : 'bg-rose-400/70')} title={f === 'W' ? 'Victoria' : 'Derrota'} />
+                            <span key={i} className={cx('h-2 w-2 rounded-full', f === 'W' ? 'bg-accent' : 'bg-rose-400/70')} title={f === 'W' ? 'Victoria' : 'Derrota'} />
                           ))}
                         </div>
                       </td>

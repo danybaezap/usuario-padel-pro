@@ -13,13 +13,13 @@
   }
   body {
     background-image:
-      radial-gradient(1200px 600px at 10% -10%, rgba(198, 244, 50, 0.07), transparent 60%),
-      radial-gradient(900px 500px at 110% 0%, rgba(34, 211, 238, 0.06), transparent 60%);
+      radial-gradient(1200px 600px at 10% -10%, rgba(92, 184, 255, 0.10), transparent 60%),
+      radial-gradient(900px 500px at 110% 0%, rgba(255, 255, 255, 0.04), transparent 60%);
     background-attachment: fixed;
     min-height: 100vh;
   }
   ::selection {
-    background: rgba(198, 244, 50, 0.35);
+    background: rgba(92, 184, 255, 0.35);
   }
   input,
   select,
@@ -39,13 +39,13 @@
     @apply mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.14em] text-slate-400;
   }
   .input {
-    @apply w-full rounded-xl border border-white/10 bg-ink-950/70 px-3.5 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 transition focus:border-lime-court/60 focus:ring-2 focus:ring-lime-court/20;
+    @apply w-full rounded-xl border border-white/10 bg-ink-950/70 px-3.5 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 transition focus:border-accent/60 focus:ring-2 focus:ring-accent/20;
   }
   .btn {
     @apply inline-flex select-none items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition active:scale-[0.98] disabled:pointer-events-none disabled:opacity-40;
   }
   .btn-primary {
-    @apply btn bg-lime-court text-ink-950 shadow-[0_8px_24px_-10px_rgba(198,244,50,0.7)] hover:brightness-110;
+    @apply btn bg-white text-ink-900 shadow-[0_8px_24px_-12px_rgba(255,255,255,0.45)] hover:bg-slate-100;
   }
   .btn-secondary {
     @apply btn border border-white/10 bg-white/[0.04] text-slate-100 hover:bg-white/[0.08];
