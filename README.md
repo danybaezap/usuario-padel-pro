@@ -74,8 +74,9 @@ npm run build
 ## 3. Configurar Supabase (producción)
 
 1. Crea un proyecto en <https://supabase.com>.
-2. En **SQL Editor**, ejecuta el archivo
-   `supabase/migrations/20261119000000_init.sql`. También puedes usar la CLI:
+2. En **SQL Editor**, ejecuta en este orden los archivos
+   `supabase/migrations/20261119000000_init.sql` y
+   `supabase/migrations/20261120000000_grants.sql`. También puedes usar la CLI:
 
    ```bash
    supabase link --project-ref <tu-proyecto>
